@@ -58,4 +58,20 @@ public class BetterMath {
         if (x > y) return x;
         return y;
     }
+
+    public static int factorial(int x) {
+        int count = 1;
+        for(int i = 1; i <= x; i++) {
+            count *= i;
+        }
+        return count;
+    }
+
+    public static int permutation(int n, int r) {
+        return factorial(n) / factorial(n - r);
+    }
+
+    public static int combination(int n, int r) {
+        return factorial(n) / (factorial(r) * factorial(n - r));
+    }
 }
