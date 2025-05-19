@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Combinatorics test1 = new Combinatorics();
-        System.out.println(test1.isThereTerm(55));
+        NumberTheory test1 = new NumberTheory();
+        System.out.println(test1.primeOrComposite(2));
     }
 }

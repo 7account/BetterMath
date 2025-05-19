@@ -21,10 +21,23 @@ public class Combinatorics {
         return fibonacciList.get(n);
     }
 
+    public int noPrintFibonacci(int n) {
+        int first = 0;
+        int second = 1;
+        fibonacciList.add(first);
+        for (int i = 0; i < n; i++) {
+            fibonacciList.add(second);
+            int temp = second;
+            second = second + first;
+            first = temp;
+        }
+        return fibonacciList.get(n);
+    }
+
     //disclaimer Integer.MAX_VALUE is 2147483647, so the terms of the Fibonacci Sequence can only go so far
     public boolean isThereTerm(int num) {
         int i = 0;
-        while (fibonacci(i) < num) {
+        while (noPrintFibonacci(i) < num) {
             i++;
         }
         for (int x = 0; x < fibonacciList.size(); x++) {
