@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 public class NumberTheory {
     private ArrayList<Integer> factorList;
+    private ArrayList<Integer> isPrimeList;
     
     public NumberTheory() {
         factorList = new ArrayList<Integer>();
+        isPrimeList = new ArrayList<Integer>();
     }
 
     public int euclidianAlgorithm(int num1, int num2) {
@@ -40,7 +42,7 @@ public class NumberTheory {
         return factorList;
     }
 
-    public boolean isPrime(int x) {
+    public boolean fermatIsPrime(int low, int high) {
         
     }
 }

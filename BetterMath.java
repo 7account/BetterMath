@@ -18,11 +18,11 @@ public class BetterMath {
     }
 
     public static double sqrt(double x) {
-        double count = x;
-        for (int i = 20; i <= 400; i+= 20) {
-            count = 0.5 * (i + (count / i));
+        double close = 0;
+        for (double i = 1; i <= x; i++) {
+            if (pow(i, 2) < x && pow(i + 1, 2) > x) close = i;
         }
-        return count;
+        return (close + (x / close)) / 0.5;
     }
 
     public static double ceil(double x) {
