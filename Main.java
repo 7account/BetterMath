@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        GraphTheory test1 = new GraphTheory();
-        System.out.println(test1.euclidian());
+        NumberTheory test1 = new NumberTheory();
+        System.out.println(test1.fermatPrime(300, 500));
+        System.out.println(test1.pseudoprime());
     }
 }

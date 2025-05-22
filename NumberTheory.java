@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 public class NumberTheory {
     private ArrayList<Integer> factorList;
-    private ArrayList<Integer> isPrimeList;
+    private ArrayList<Integer> fermatPrimeList;
     
     public NumberTheory() {
         factorList = new ArrayList<Integer>();
-        isPrimeList = new ArrayList<Integer>();
+        fermatPrimeList = new ArrayList<Integer>();
     }
 
+    //with euclidian algorithm, the user can find the greatest common factor between two numbers easily
     public int euclidianAlgorithm(int num1, int num2) {
         if (num1 == 0) return num2;
         if (num2 == 0) return num1;
@@ -42,7 +43,20 @@ public class NumberTheory {
         return factorList;
     }
 
-    public boolean fermatIsPrime(int low, int high) {
-        
+    public ArrayList<Integer> fermatPrime(int low, int high) {
+        for (int p = low; p <= high; p++) {
+            if (BetterMath.pow(2, p - 1) % p == 1) fermatPrimeList.add(p);
+        }
+        return fermatPrimeList;
+    }
+
+    public ArrayList<Integer> pseudoprime() {
+        ArrayList<Integer> pseudoPrimeList = new ArrayList<Integer>();
+        for (int i = 0; i < fermatPrimeList.size(); i++) {
+            if (primeOrComposite(fermatPrimeList.get(i)).size() == 2) pseudoPrimeList.add(fermatPrimeList.get(i));
+        }
+        if (pseudoPrimeList.size() == 0) System.out.println("There are no pseudoprimes!");
+        else System.out.println("There are no pseudoprimes!");
+        return pseudoPrimeList;
     }
 }

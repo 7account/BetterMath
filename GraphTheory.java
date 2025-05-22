@@ -3,6 +3,7 @@ public class GraphTheory {
     private int vertices;
     private int edges;
     private int[] degrees;
+    
     public GraphTheory() {
         vertices = vertex();
         edges = edge();
@@ -12,6 +13,13 @@ public class GraphTheory {
             degrees[i] = degree();
         }
     }
+
+    public GraphTheory(int v, int e, int[] d) {
+        vertices = v;
+        edges = e;
+        degrees = d;
+    }
+
     
     public int vertex() {
         Scanner s = new Scanner(System.in);
