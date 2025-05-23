@@ -56,7 +56,7 @@ public class NumberTheory {
             if (primeOrComposite(fermatPrimeList.get(i)).size() == 2) pseudoPrimeList.add(fermatPrimeList.get(i));
         }
         if (pseudoPrimeList.size() == 0) System.out.println("There are no pseudoprimes!");
-        else System.out.println("There are no pseudoprimes!");
+        else System.out.println("There are pseudoprimes!");
         return pseudoPrimeList;
     }
 }

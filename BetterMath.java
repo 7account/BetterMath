@@ -10,7 +10,7 @@ public class BetterMath {
     }
 
     public static double pow(double base, double exponent) {
-        double count = 0.0;
+        double count = 1.0;
         for (int i = 0; i < exponent; i++) {
             count *= exponent;
         }
