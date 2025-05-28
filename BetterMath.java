@@ -17,12 +17,15 @@ public class BetterMath {
         return count;
     }
 
+    /* uses Babylonian Algorithm to find square root by hand ->
+    guess a number and iterate to polish numbers; each repetition fine-tunes towards the correct number */
+    
     public static double sqrt(double x) {
-        double close = 0;
-        for (double i = 1; i <= x; i++) {
-            if (pow(i, 2) < x && pow(i + 1, 2) > x) close = i;
+        double result = 2;
+        for (int i = 0; i < 30; i++) {
+            result = (result + (x / result)) / 2.0;
         }
-        return (close + (x / close)) / 0.5;
+        return result;
     }
 
     public static double ceil(double x) {
@@ -36,7 +39,8 @@ public class BetterMath {
     }
 
     public static double round(double x) {
-        
+        if ((int) x * 2 == (int) (2 * x)) return floor(x);
+        return ceil(x);
     }
 
     public static int min(int x, int y) {
