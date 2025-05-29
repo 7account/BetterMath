@@ -32,6 +32,10 @@ public class NumberTheory {
         return a;
     }
 
+    /* brute force for factors and see if it is prime or composite
+    prime: there are only two factors (1 and itself)
+    composite: more than two factors
+    */
     public ArrayList<Integer> primeOrComposite(int x) {
         int valueBruteForce = x;
         while (valueBruteForce != 0) {
@@ -43,6 +47,9 @@ public class NumberTheory {
         return factorList;
     }
 
+    /* use Fermat's Little Theorem to find primes
+    However, Fermat's Little Theorem doesn't always give primes; there are pseudoprimes
+    */
     public ArrayList<Integer> fermatPrime(int low, int high) {
         for (int p = low; p <= high; p++) {
             if (BetterMath.pow(2, p - 1) % p == 1) fermatPrimeList.add(p);
@@ -50,6 +57,9 @@ public class NumberTheory {
         return fermatPrimeList;
     }
 
+    /* find pseudoprimes from the the list of primes from Fermat's Little Theorem
+    with each "prime," we bruteforce numbers to see if it is prime or composite them
+    */
     public ArrayList<Integer> pseudoprime() {
         ArrayList<Integer> pseudoPrimeList = new ArrayList<Integer>();
         for (int i = 0; i < fermatPrimeList.size(); i++) {

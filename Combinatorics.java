@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 public class Combinatorics {
     private ArrayList<Integer> fibonacciList;
-    // finds the nth term of a Fibonacci Sequence recursively
+
     public Combinatorics() {
         fibonacciList = new ArrayList<Integer>();
     }
     
+    // finds the nth term of a Fibonacci Sequence recursively
     public int fibonacci(int n) {
         int first = 0;
         int second = 1;
@@ -33,8 +34,8 @@ public class Combinatorics {
         }
         return fibonacciList.get(n);
     }
-
-    //disclaimer Integer.MAX_VALUE is 2147483647, so the terms of the Fibonacci Sequence can only go so far
+    /* see whether or not a number is a Fibonacci number
+    disclaimer Integer.MAX_VALUE is 2147483647, so the terms of the Fibonacci Sequence can only go so far */
     public boolean isThereTerm(int num) {
         int i = 0;
         while (noPrintFibonacci(i) < num) {

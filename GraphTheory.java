@@ -46,7 +46,8 @@ public class GraphTheory {
         }
         return sum == (edges * 2);
     }
-
+    
+    // See whether the graph made is an Eulerian Circuit, an Euclidian Path, or not at all
     public String euclidian() {
         int numOddDegrees = 0;
         for (int i = 0; i < degrees.length; i++) {
