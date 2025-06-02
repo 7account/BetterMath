@@ -46,4 +46,13 @@ public class Combinatorics {
         }
         return false;
     }
+
+    public int hockeyStickIdentity(int r, int n) {
+        int count = 0;
+        for (int i = r; i <= n; i++) {
+            System.out.println(i + " choose " + r + " is " + BetterMath.combination(i, r));
+            count += BetterMath.combination(i, r);
+        }
+        return count;
+    }
 }

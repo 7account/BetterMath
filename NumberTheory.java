@@ -1,10 +1,8 @@
 import java.util.ArrayList;
-public class NumberTheory {
-    private ArrayList<Integer> factorList;
+public class NumberTheory{
     private ArrayList<Integer> fermatPrimeList;
     
     public NumberTheory() {
-        factorList = new ArrayList<Integer>();
         fermatPrimeList = new ArrayList<Integer>();
     }
 
@@ -32,19 +30,16 @@ public class NumberTheory {
         return a;
     }
 
-    /* brute force for factors and see if it is prime or composite
-    prime: there are only two factors (1 and itself)
-    composite: more than two factors
-    */
-    public ArrayList<Integer> primeOrComposite(int x) {
-        int valueBruteForce = x;
-        while (valueBruteForce != 0) {
-            if (x % valueBruteForce == 0) factorList.add(valueBruteForce);
-            valueBruteForce--;
+    public static boolean isPrime(int x) {
+        if (x <= 1) {
+            return false;
         }
-        if (factorList.size() == 2) System.out.println(x + " is a prime number!");
-        else System.out.println(x + " is a composite number!");
-        return factorList;
+        for (int i = 2; i <= BetterMath.sqrt(x); i++) {
+            if (x % i == 0) {
+                return false; 
+            }
+        }
+        return true;
     }
 
     /* use Fermat's Little Theorem to find primes
@@ -63,7 +58,7 @@ public class NumberTheory {
     public ArrayList<Integer> pseudoprime() {
         ArrayList<Integer> pseudoPrimeList = new ArrayList<Integer>();
         for (int i = 0; i < fermatPrimeList.size(); i++) {
-            if (primeOrComposite(fermatPrimeList.get(i)).size() == 2) pseudoPrimeList.add(fermatPrimeList.get(i));
+            if (!(isPrime(fermatPrimeList.get(i)))) pseudoPrimeList.add(fermatPrimeList.get(i));
         }
         if (pseudoPrimeList.size() == 0) System.out.println("There are no pseudoprimes!");
         else System.out.println("There are pseudoprimes!");

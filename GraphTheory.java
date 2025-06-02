@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class GraphTheory {
+public class GraphTheory{
     private int vertices;
     private int edges;
     private int[] degrees;

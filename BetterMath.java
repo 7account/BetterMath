@@ -17,10 +17,11 @@ public class BetterMath {
         return count;
     }
 
-    /* uses Babylonian Algorithm to find square root by hand ->
+    /* uses Heron's method to find square root by hand ->
     guess a number and iterate to polish numbers; each repetition fine-tunes towards the correct number */
     public static double sqrt(double x) {
         if (x < 0) return Double.NaN;
+        if (x == 0.0) return 0.0;
         double result = 2.0;
         for (int i = 0; i < 30; i++) {
             result = (result + (x / result)) / 2.0;
