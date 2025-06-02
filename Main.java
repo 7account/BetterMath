@@ -27,6 +27,7 @@ public class Main {
         System.out.println(NumberTheory.isPrime(31));
         System.out.println("--------------------------------------------");
 
+        //Combinatorics test cases:
         Combinatorics Combinatorics1 = new Combinatorics();
         System.out.println(Combinatorics1.fibonacci(5));
         System.out.println(Combinatorics1.isThereTerm(5));
